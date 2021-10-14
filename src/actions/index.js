@@ -1,6 +1,8 @@
-export const addTask = (payload) => ({
+import todolist from '../tododata/todo'
+
+export const addTask = (e) => ({
     type: 'ADD_TASK',
-    payload
+    payload: {id: todolist.length + 1, task: e.target[0].value}
 });
 
 export const deleteTask = (taskId) => ({
